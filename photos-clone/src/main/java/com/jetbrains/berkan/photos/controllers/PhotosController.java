@@ -1,6 +1,8 @@
-package com.jetbrains.berkan.photos;
+package com.jetbrains.berkan.photos.controllers;
 
 
+import com.jetbrains.berkan.photos.models.Photo;
+import com.jetbrains.berkan.photos.services.PhotosService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -8,7 +10,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.UUID;
 
 @RestController
 public class PhotosController {

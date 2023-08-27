@@ -1,4 +1,4 @@
-package com.jetbrains.berkan.photos;
+package com.jetbrains.berkan.photos.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;

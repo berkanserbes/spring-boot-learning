@@ -1,10 +1,11 @@
-package com.jetbrains.berkan.photos;
+package com.jetbrains.berkan.photos.controllers;
 
+import com.jetbrains.berkan.photos.models.Photo;
+import com.jetbrains.berkan.photos.services.PhotosService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController

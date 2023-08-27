@@ -1,5 +1,6 @@
-package com.jetbrains.berkan.photos;
+package com.jetbrains.berkan.photos.services;
 
+import com.jetbrains.berkan.photos.models.Photo;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
