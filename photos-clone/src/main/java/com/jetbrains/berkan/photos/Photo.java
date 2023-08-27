@@ -1,7 +1,12 @@
 package com.jetbrains.berkan.photos;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 public class Photo {
     private String id;
+
+    @NotEmpty
     private String fileName;
 
     public Photo() {};
