@@ -23,6 +23,6 @@ public class Order {
 
     private String userName;
     private Double totalPrice;
-    private List<String> bookList;
+    private List<Integer> bookList;
 
 }
