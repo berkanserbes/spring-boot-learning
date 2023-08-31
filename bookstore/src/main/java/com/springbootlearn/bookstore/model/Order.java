@@ -1,21 +1,18 @@
 package com.springbootlearn.bookstore.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
-@Table(name = "BookOrder")
+@Table
+@Entity(name = "BookOrder")
 @Getter
 @Setter
 @Data
 @Builder   // Builder design patterni
+@AllArgsConstructor
+@NoArgsConstructor
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
