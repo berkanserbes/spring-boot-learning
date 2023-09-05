@@ -2,10 +2,12 @@ package com.springbootlearn.rentACar.dataAccess.concretes;
 
 import com.springbootlearn.rentACar.dataAccess.abstracts.BrandRepository;
 import com.springbootlearn.rentACar.entities.concretes.Brand;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class InMemoryBrandRepository  implements BrandRepository {
     List<Brand> brands;
 
