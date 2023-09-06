@@ -10,7 +10,6 @@ import java.util.List;
 
 @Service
 public class BrandManager implements BrandService {
-
     private BrandRepository brandRepository;
 
     @Autowired
@@ -19,6 +18,6 @@ public class BrandManager implements BrandService {
     }
     @Override
     public List<Brand> getAll() {
-        return brandRepository.getAll();
+        return brandRepository.findAll();
     }
 }
