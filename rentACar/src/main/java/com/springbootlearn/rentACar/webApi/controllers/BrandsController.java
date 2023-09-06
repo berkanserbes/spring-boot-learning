@@ -1,12 +1,10 @@
 package com.springbootlearn.rentACar.webApi.controllers;
 
 import com.springbootlearn.rentACar.business.abstracts.BrandService;
+import com.springbootlearn.rentACar.business.requests.CreateBrandRequest;
 import com.springbootlearn.rentACar.business.responses.GetAllBrandsResponse;
-import com.springbootlearn.rentACar.entities.concretes.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,10 @@ public class BrandsController {
     @GetMapping("/getall")
     public List<GetAllBrandsResponse> getAll() {
         return brandService.getAll();
+    }
+
+    @PostMapping("/add")
+    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+        this.brandService.add(createBrandRequest);
     }
 }

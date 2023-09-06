@@ -1,6 +1,7 @@
 package com.springbootlearn.rentACar.business.concretes;
 
 import com.springbootlearn.rentACar.business.abstracts.BrandService;
+import com.springbootlearn.rentACar.business.requests.CreateBrandRequest;
 import com.springbootlearn.rentACar.business.responses.GetAllBrandsResponse;
 import com.springbootlearn.rentACar.dataAccess.abstracts.BrandRepository;
 import com.springbootlearn.rentACar.entities.concretes.Brand;
@@ -32,5 +33,13 @@ public class BrandManager implements BrandService {
         }
 
         return brandsResponse;
+    }
+
+    @Override
+    public void add(CreateBrandRequest createBrandRequest) {
+        Brand brand = new Brand();
+        brand.setName(createBrandRequest.getName());
+
+        this.brandRepository.save(brand);
     }
 }
