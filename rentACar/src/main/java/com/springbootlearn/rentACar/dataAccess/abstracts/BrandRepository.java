@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface BrandRepository extends JpaRepository<Brand, Integer> {
-
+    boolean existsByName(String name);
 }

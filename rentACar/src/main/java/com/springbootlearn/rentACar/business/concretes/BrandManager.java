@@ -5,6 +5,7 @@ import com.springbootlearn.rentACar.business.requests.CreateBrandRequest;
 import com.springbootlearn.rentACar.business.requests.UpdateBrandRequest;
 import com.springbootlearn.rentACar.business.responses.GetAllBrandsResponse;
 import com.springbootlearn.rentACar.business.responses.GetByIdBrandResponse;
+import com.springbootlearn.rentACar.business.rules.BrandBusinessRules;
 import com.springbootlearn.rentACar.core.utilities.mappers.ModelMapperService;
 import com.springbootlearn.rentACar.dataAccess.abstracts.BrandRepository;
 import com.springbootlearn.rentACar.entities.concretes.Brand;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class BrandManager implements BrandService {
     private BrandRepository brandRepository;
     private ModelMapperService modelMapperService;
+    private BrandBusinessRules brandBusinessRules;
 
     @Override
     public List<GetAllBrandsResponse> getAll() {
@@ -55,7 +57,7 @@ public class BrandManager implements BrandService {
     public void add(CreateBrandRequest createBrandRequest) {
         //Brand brand = new Brand();
         //brand.setName(createBrandRequest.getName());
-
+        this.brandBusinessRules.checkIfBrandNameExists(createBrandRequest.getName());
         Brand brand = this.modelMapperService.forRequest().map(createBrandRequest, Brand.class);
 
         this.brandRepository.save(brand);
