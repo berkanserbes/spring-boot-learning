@@ -1,6 +1,7 @@
 package com.springbootlearn.rentACar.business.concretes;
 
 import com.springbootlearn.rentACar.business.abstracts.ModelService;
+import com.springbootlearn.rentACar.business.requests.CreateModelRequest;
 import com.springbootlearn.rentACar.business.responses.GetAllModelsResponse;
 import com.springbootlearn.rentACar.core.utilities.mappers.ModelMapperService;
 import com.springbootlearn.rentACar.dataAccess.abstracts.ModelRepository;
@@ -29,5 +30,12 @@ public class ModelManager implements ModelService {
                         .map(model, GetAllModelsResponse.class)).collect(Collectors.toList());
 
         return modelsResponse;
+    }
+
+    @Override
+    public void add(CreateModelRequest createModelRequest) {
+        Model model = this.modelMapperService.forRequest().map(createModelRequest, Model.class);
+
+        this.modelRepository.save(model);
     }
 }
