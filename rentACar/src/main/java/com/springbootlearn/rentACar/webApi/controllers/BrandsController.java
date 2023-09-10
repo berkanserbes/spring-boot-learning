@@ -5,6 +5,7 @@ import com.springbootlearn.rentACar.business.requests.CreateBrandRequest;
 import com.springbootlearn.rentACar.business.requests.UpdateBrandRequest;
 import com.springbootlearn.rentACar.business.responses.GetAllBrandsResponse;
 import com.springbootlearn.rentACar.business.responses.GetByIdBrandResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class BrandsController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+    public void add(@RequestBody @Valid CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
     }
 

@@ -3,6 +3,7 @@ package com.springbootlearn.rentACar.webApi.controllers;
 import com.springbootlearn.rentACar.business.abstracts.ModelService;
 import com.springbootlearn.rentACar.business.requests.CreateModelRequest;
 import com.springbootlearn.rentACar.business.responses.GetAllModelsResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class ModelsController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    void add(@RequestBody CreateModelRequest createModelRequest) {
+    void add(@RequestBody @Valid CreateModelRequest createModelRequest) {
         this.modelService.add(createModelRequest);
     }
 
